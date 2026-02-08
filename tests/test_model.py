@@ -15,7 +15,7 @@ def main():
     df = pd.read_csv(DATA_PATH)
 
     # date features (only if you used them in training)
-    df["dteday"] = pd.to_datetime(df["dteday"])
+    df["dteday"] = pd.to_datetime(df["dteday"], dayfirst=True)
     df["day"] = df["dteday"].dt.day
     df["year"] = df["dteday"].dt.year
 
